@@ -1,0 +1,153 @@
+/*======================================================
+BRANDS
+======================================================*/
+
+#brands{
+
+    padding:120px 0;
+
+    overflow:hidden;
+
+}
+
+.brands-slider{
+
+    margin-top:70px;
+
+    overflow:hidden;
+
+    position:relative;
+
+}
+
+.brands-slider::before,
+.brands-slider::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    width:140px;
+
+    height:100%;
+
+    z-index:2;
+
+}
+
+.brands-slider::before{
+
+    left:0;
+
+    background:linear-gradient(to right,var(--color-dark),transparent);
+
+}
+
+.brands-slider::after{
+
+    right:0;
+
+    background:linear-gradient(to left,var(--color-dark),transparent);
+
+}
+
+.brands-track{
+
+    display:flex;
+
+    width:max-content;
+
+    animation:scrollBrands 30s linear infinite;
+
+}
+
+.brand-item{
+
+    min-width:220px;
+
+    height:90px;
+
+    margin:0 18px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:20px;
+
+    border:1px solid var(--color-border);
+
+    background:var(--color-surface);
+
+    font-size:1.4rem;
+
+    font-weight:700;
+
+    transition:var(--transition);
+
+}
+
+.brand-item:hover{
+
+    color:var(--color-primary);
+
+    border-color:var(--color-primary);
+
+
+}
+
+@keyframes scrollBrands{
+
+    from{
+
+        transform:translateX(0);
+
+    }
+
+    to{
+
+        transform:translateX(-50%);
+
+    }
+
+}
+
+@media(max-width:768px){
+
+.brand-item{
+
+min-width:170px;
+
+height:75px;
+
+font-size:1.1rem;
+
+}
+
+}
+
+.brand-item img{
+
+    max-width:120px;
+
+    max-height:45px;
+
+    object-fit:contain;
+
+    opacity:.75;
+
+    transition:.3s;
+
+}
+
+.brand-item:hover img{
+
+    opacity:1;
+
+    transform:scale(1.08);
+
+}

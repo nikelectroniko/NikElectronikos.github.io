@@ -1,0 +1,204 @@
+/*======================================================
+WHY US
+======================================================*/
+
+#why-us{
+
+    padding:120px 0;
+
+}
+
+.why-us-content{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:70px;
+
+    align-items:center;
+
+}
+
+.why-image{
+
+    display:flex;
+    
+    justify-content:center;
+
+}
+
+.why-image-box img{
+     width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ajusta la imagen cubriendo todo el contenedor sin deformarse*/ 
+  object-position: center; /* Centra la imagen dentro del área*/ 
+}
+
+.why-image-box{
+
+    width:100%;
+
+    max-width:560px;
+
+    aspect-ratio:5/5;
+
+    border-radius:28px;
+
+    background:linear-gradient(145deg,#0f172a,#050816);
+
+    border:1px solid var(--color-border);
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.why-image-box::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:320px;
+
+    height:320px;
+
+    border-radius:50%;
+
+    background:var(--color-primary);
+
+    filter:blur(130px);
+
+    opacity:.25;
+
+    top:-80px;
+
+    left:-80px;
+
+}
+
+.why-info h2{
+
+    font-size:clamp(2.2rem,4vw,3.5rem);
+
+    margin:25px 0;
+
+    line-height:1.15;
+
+}
+
+.why-info>p{
+
+    color:var(--color-text);
+
+    margin-bottom:40px;
+
+    line-height:1.8;
+
+}
+
+.why-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:22px;
+
+    margin-bottom:45px;
+
+}
+
+.why-item{
+
+    display:flex;
+
+    gap:20px;
+
+    align-items:flex-start;
+
+    padding:20px;
+
+    border-radius:18px;
+
+    border:1px solid var(--color-border);
+
+    transition:var(--transition);
+
+}
+
+.why-item:hover{
+
+    transform:translateX(10px);
+
+    border-color:var(--color-primary);
+
+    background:rgba(255,255,255,.02);
+
+}
+
+.why-item svg{
+
+    width:28px;
+
+    height:28px;
+
+    color:var(--color-primary);
+
+    flex-shrink:0;
+
+}
+
+.why-item h4{
+
+    margin-bottom:6px;
+
+    font-size:1.1rem;
+
+}
+
+.why-item p{
+
+    color:var(--color-text);
+
+    font-size:.95rem;
+
+}
+
+@media(max-width:900px){
+
+    .why-us-content{
+
+        grid-template-columns:1fr;
+
+        gap:60px;
+
+    }
+
+    .why-image{
+
+        order:-1;
+
+    }
+
+    .why-info{
+
+        text-align:center;
+
+    }
+
+    .why-list{
+
+        text-align:left;
+
+    }
+
+    .why-image-box{
+
+        max-width:420px;
+
+    }
+
+}

@@ -1,0 +1,413 @@
+/*======================================================
+VIDEOS
+======================================================*/
+
+#videos{
+
+    padding:120px 0;
+
+}
+
+.videos-grid{
+
+    margin-top:70px;
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr;
+
+    grid-template-areas:
+    "featured video2"
+    "featured brand";
+
+    gap:30px;
+
+}
+
+/*=========================
+TARJETAS
+=========================*/
+
+.video-card,
+.video-brand{
+
+    background:var(--color-surface);
+
+    border:1px solid var(--color-border);
+
+    border-radius:24px;
+
+    overflow:hidden;
+
+    transition:var(--transition);
+
+}
+
+.video-card:hover,
+.video-brand:hover{
+
+    transform:translateY(-8px);
+
+    border-color:var(--color-primary);
+
+    box-shadow:0 20px 45px rgba(37,99,235,.18);
+
+}
+
+/*=========================
+POSICIONES
+=========================*/
+
+.featured-video{
+
+    grid-area:featured;
+
+}
+
+.video-card:nth-child(2){
+
+    grid-area:video2;
+
+}
+
+.video-brand{
+
+    grid-area:brand;
+
+}
+
+/*=========================
+PREVIEW
+=========================*/
+
+.video-preview{
+
+    position:relative;
+
+    width:100%;
+
+    overflow:hidden;
+
+    background:#000;
+
+}
+
+/*=========================
+VIDEO GRANDE
+=========================*/
+
+.featured-video .video-preview{
+
+    height:420px;
+
+}
+
+/*=========================
+VIDEOS PEQUEÑOS
+=========================*/
+
+.video-card:not(.featured-video) .video-preview{
+
+    height:220px;
+
+}
+
+/*=========================
+VIDEOS
+=========================*/
+
+.video-preview video{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+
+    transition:.45s;
+
+}
+
+.video-card:hover video{
+
+    transform:scale(1.08);
+
+}
+
+/*=========================
+OVERLAY
+=========================*/
+
+.video-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(0,0,0,.25);
+
+    transition:.35s;
+
+}
+
+.video-card:hover .video-overlay{
+
+    background:rgba(0,0,0,.45);
+
+}
+
+/*=========================
+BOTON PLAY
+=========================*/
+
+.play-btn{
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:50%;
+
+    background:rgba(37,99,235,.95);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:#fff;
+
+    transition:.35s;
+
+}
+
+.play-btn svg{
+
+    width:30px;
+
+    height:30px;
+
+}
+
+.video-card:hover .play-btn{
+
+    transform:scale(1.1);
+
+}
+
+/*=========================
+BADGE
+=========================*/
+
+.video-tag{
+
+    position:absolute;
+
+    top:18px;
+
+    left:18px;
+
+    padding:8px 14px;
+
+    border-radius:999px;
+
+    background:rgba(37,99,235,.95);
+
+    font-size:.85rem;
+
+    font-weight:600;
+
+}
+
+/*=========================
+INFO
+=========================*/
+
+.video-info{
+
+    padding:24px;
+
+}
+
+.video-info h3{
+
+    margin-bottom:10px;
+
+    font-size:1.3rem;
+
+}
+
+.video-info p{
+
+    color:var(--color-text);
+
+    line-height:1.7;
+
+}
+
+/*=========================
+LOGO
+=========================*/
+
+.video-brand{
+
+    position:relative;
+
+    min-height:320px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.video-brand video{
+
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+   /* opacity:.35;*/
+
+    transition:.5s;
+
+}
+
+.video-brand:hover video{
+
+    transform:scale(1.08);
+
+    opacity:.55;
+
+}
+
+.brand-overlay{
+
+    position:relative;
+
+    z-index:2;
+
+    text-align:center;
+
+    padding:40px;
+
+}
+
+.brand-badge{
+
+    display:inline-block;
+
+    padding:8px 18px;
+
+    border-radius:999px;
+
+    background:rgba(37,99,235,.15);
+
+    border:1px solid rgba(37,99,235,.35);
+
+    color:var(--color-primary);
+
+    font-weight:600;
+
+    margin-bottom:18px;
+
+}
+
+.brand-overlay h3{
+
+    font-size:2rem;
+
+    margin-bottom:12px;
+
+}
+
+.brand-overlay p{
+
+    color:var(--color-text);
+
+    line-height:1.7;
+
+}
+
+/*=========================
+RESPONSIVE
+=========================*/
+
+@media(max-width:992px){
+
+    .videos-grid{
+
+        grid-template-columns:1fr;
+
+        grid-template-areas:
+
+        "featured"
+
+        "video2"
+
+        "brand"
+
+        "video3";
+
+    }
+
+    .featured-video .video-preview{
+
+        height:300px;
+
+    }
+
+    .video-card:not(.featured-video) .video-preview{
+
+        height:220px;
+
+    }
+
+    .video-brand{
+
+        min-height:260px;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .featured-video .video-preview{
+
+        height:240px;
+
+    }
+
+    .video-card:not(.featured-video) .video-preview{
+
+        height:200px;
+
+    }
+
+    .play-btn{
+
+        width:58px;
+
+        height:58px;
+
+    }
+
+}
